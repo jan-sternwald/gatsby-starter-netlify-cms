@@ -23,6 +23,7 @@ collections:
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
+    summary: '{{title}} - {{date}}'
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
