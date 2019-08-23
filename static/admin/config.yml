@@ -8,14 +8,17 @@ public_folder: /img
 collections:
   - name: "menu"
     label: "Menu"
-    folder: "src/navigation"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "menu-item"}
-      - {label: "Menu item", name: "title", widget: "string"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: Subitems, name: menu-subitems, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Slug, name: slug, widget: text}]}
+    files:
+      - file: "src/navigation/socialmedia.md"
+        label: "Social"
+        name: "social"
+        fields:
+          - {label: Items, name: items, widget: list, fields: [{label: Network, name: network, widget: select, options: ["twitter","facebook","linkedin","xing"]}, {label: Title, name: title, widget: string}, {label: Link, name: url, widget: string}]}
+      - file: "src/navigation/topics.md"
+        label: "Topic"
+        name: "topic"
+        fields:
+          - {label: Items, name: items, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Slug, name: slug, widget: string}]}
 
   - name: "blog"
     label: "Blog"
